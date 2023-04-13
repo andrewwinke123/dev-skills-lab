@@ -1,8 +1,16 @@
-import { games } from '../data/games-data.js'
+import { Game } from '../models/game.js'
+
 
 function index(req, res) {
-  res.render('games/index', {
-    games:games
+  Game.find({})
+  .then(games => {
+    res.render('games/index', {
+      games: games,
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
   })
 }
 
