@@ -1,0 +1,10 @@
+<h1>Games</h1>
+<ul>
+  <% games.forEach(game => { %>
+    <li>
+      <%= game.text %> 
+      - 
+      <%= game.done ? 'done' : 'not done' %>
+    </li>
+  <% }) %>
+</ul>
