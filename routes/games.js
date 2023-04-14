@@ -7,5 +7,9 @@ const router = Router()
 
 // GET localhost:3000/gamess
 router.get('/', gamesCtrl.index) 
+router.get('/', gamesCtrl.index)
+router.get('/new', gamesCtrl.new)
+router.get('/:gameId', gamesCtrl.show)
+router.post('/', gamesCtrl.create)
 
 export { router }

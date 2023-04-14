@@ -8,16 +8,10 @@
   <title>Document</title>
 </head>
 <body>
-  <ul>
-    <% games.forEach(game => { %>
-      <li>
-       <a href="/games/<%= game._id %>"><<%= game.text %>/a>"
-        - 
-        <%= game.done ? 'done' : 'not done' %>
-      </li>
-    <% }) %>
-  </ul>  
-  <a href="/games/new">Add Game</a>
+  <h1>New Game Idea</h1>
+  <form action="/games" method="POST" autocomplete="off">
+    <input type="text" name="text">
+    <button type="submit">Save Game</button>
+  </form>
 </body>
 </html>
-<h1>Games</h1>
