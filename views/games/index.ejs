@@ -11,7 +11,7 @@
   <ul>
     <% games.forEach(game => { %>
       <li>
-       <a href="/games/<%= game._id %>"><<%= game.text %>/a>"
+      <a href="/games/<%= game._id %>"><%= game.text %>/a>"
         - 
         <%= game.done ? 'done' : 'not done' %>
       </li>
