@@ -11,5 +11,6 @@ router.get('/', gamesCtrl.index)
 router.get('/new', gamesCtrl.new)
 router.get('/:gameId', gamesCtrl.show)
 router.post('/', gamesCtrl.create)
+router.delete('/:gameId', gamesCtrl.delete)
 
 export { router }

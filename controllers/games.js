@@ -6,6 +6,7 @@ function index(req, res) {
   .then(games => {
     res.render('games/index', {
       games: games,
+      time: req.time
     })
   })
   .catch(error => {
@@ -43,10 +44,21 @@ function show(req, res) {
     res.redirect('/games')
   })
 }
+function deleteGame(req, res) {
+  Game.findByIdAndDelete(req.params.gameId)
+  .then(game => {
+    res.redirect('/games')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/games')
+  })
+}
 
 export {
   index,
   newGame as new,
   create,
-  show
+  show,
+  deleteGame as delete,
 }
